@@ -1,0 +1,44 @@
+
+Using java
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		HashMap<Character,Integer> hm= new HashMap<Character,Integer>();
+		String s="AAAAABBBBCCCC";
+		int n=s.length();
+		int ctr;
+		for(int i=0;i<n;i++)
+		{
+			char c=s.charAt(i);
+			
+			if(hm.containsKey(c))//check whether the hashmap contains that character or not
+			{
+				ctr=hm.get(c);
+				ctr++;
+				hm.put(c,ctr);//increase the  frequency of character by 1
+			}
+			else
+			{
+				hm.put(c,1);//if character not present insert it into the hashmap 
+			}
+		}
+		System.out.println(hm);
+		
+	 for (Character d : hm.keySet()) 
+        {
+            
+            int freq = hm.get(d);//get frequency of the character
+            System.out.print( d + "" + freq);
+        }
+	}
+}
+
+
+map.put(num, map.getOrDefault(num, 0) + 1);
