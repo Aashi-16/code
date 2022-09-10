@@ -1,0 +1,36 @@
+REDUNDANT BRACES
+
+import java.util.*;
+public class Solution {
+    public int braces(String A) {
+        char[] string=A.toCharArray();
+        Stack<Character> st= new Stack<>();
+
+        for(char ch : string)
+        {
+            if(ch==')')
+            {
+                char on_top=st.peek();//check top_most character
+                st.pop();
+                boolean flag=false;
+
+                while(on_top != '(')
+                {
+                    if((on_top=='+')||(on_top=='-')||(on_top=='*')||(on_top=='/'))
+                    {flag=true;}
+                    on_top=st.peek();
+                    st.pop();
+                }
+                if(flag==false)
+                return 1;
+               
+            }
+
+        
+        else
+        {st.push(ch);}
+        }
+        return 0;
+        
+    }
+}
